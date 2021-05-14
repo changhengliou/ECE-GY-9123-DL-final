@@ -1,0 +1,351 @@
+================== Test all topics with test_decode_step_1.sh ==================
+Testing contribution
+2021-05-11 15:57:42,660 [INFO:__main__]: My PID is 27584
+2021-05-11 15:57:42,661 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=4, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/contribution/test.txt.src', dev_input_src_section='../../data/test/contribution/test.txt.section', dev_ref='../../data/test/contribution/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=1, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_prob', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='none', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0001, train_oracle='../../data/train/contribution/train.txt.oracle', train_src='../../data/train/contribution/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/contribution/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:57:43,351 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:57:43,352 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:57:43,897 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:57:43,897 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:57:43,898 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:57:43.897925', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:57:44,170 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:57:44,171 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:57:44,171 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution/model_epoch_6.pt"
+2021-05-11 15:57:46,571 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 15:57:46,572 [INFO:__main__]:  * vocabulary size. source = 1000001
+2021-05-11 15:57:46,572 [INFO:__main__]:  * maximum batch size. 4
+2021-05-11 15:57:46,572 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 15:57:47,058 [INFO:__main__]: Loading trained model...
+2021-05-11 15:57:52,511 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution/model_epoch_6.pt
+2021-05-11 15:57:52,511 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 15:57:52,511 [INFO:__main__]: 	Max Decode Steps: 1
+2021-05-11 15:57:52,511 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 15:57:52,511 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 15:57:52,511 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 15:57:52,511 [INFO:__main__]: [0.14114832535885166, 0.5918367346938775, {'p': 0.6020408163265306, 'r': 0.14114832535885166, 'f1': 0.22868217054263562}, {'corpus_bleu': 0.6870849957493391, 'avg_sent_bleu': 0.6364364433851464}]
+Testing dataset
+2021-05-11 15:57:54,168 [INFO:__main__]: My PID is 27604
+2021-05-11 15:57:54,169 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=4, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/dataset/test.txt.src', dev_input_src_section='../../data/test/dataset/test.txt.section', dev_ref='../../data/test/dataset/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=1, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_prob', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='none', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0001, train_oracle='../../data/train/dataset/train.txt.oracle', train_src='../../data/train/dataset/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/dataset/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:57:54,866 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:57:54,866 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:57:55,391 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:57:55,391 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:57:55,392 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:57:55.391748', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:57:55,652 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:57:55,652 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:57:55,653 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset/model_epoch_6.pt"
+2021-05-11 15:57:58,067 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 15:57:58,067 [INFO:__main__]:  * vocabulary size. source = 1000000
+2021-05-11 15:57:58,067 [INFO:__main__]:  * maximum batch size. 4
+2021-05-11 15:57:58,067 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 15:57:58,548 [INFO:__main__]: Loading trained model...
+2021-05-11 15:58:03,534 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset/model_epoch_6.pt
+2021-05-11 15:58:03,534 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 15:58:03,534 [INFO:__main__]: 	Max Decode Steps: 1
+2021-05-11 15:58:03,534 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 15:58:03,534 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 15:58:03,534 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 15:58:03,534 [INFO:__main__]: [0.1262135922330097, 0.2857142857142857, {'p': 0.2857142857142857, 'r': 0.1262135922330097, 'f1': 0.1750841750841751}, {'corpus_bleu': 0.33414995555450533, 'avg_sent_bleu': 0.29699662916141945}]
+Testing baseline
+2021-05-11 15:58:05,185 [INFO:__main__]: My PID is 27624
+2021-05-11 15:58:05,185 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=4, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/baseline/test.txt.src', dev_input_src_section='../../data/test/baseline/test.txt.section', dev_ref='../../data/test/baseline/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=1, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_prob', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='none', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0001, train_oracle='../../data/train/baseline/train.txt.oracle', train_src='../../data/train/baseline/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/baseline/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:58:05,878 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:58:05,878 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:58:06,404 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:58:06,405 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:58:06,405 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:58:06.405304', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:58:06,669 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:58:06,669 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:58:06,669 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline/model_epoch_6.pt"
+2021-05-11 15:58:09,104 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 15:58:09,104 [INFO:__main__]:  * vocabulary size. source = 1000001
+2021-05-11 15:58:09,104 [INFO:__main__]:  * maximum batch size. 4
+2021-05-11 15:58:09,104 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 15:58:09,580 [INFO:__main__]: Loading trained model...
+2021-05-11 15:58:14,110 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline/model_epoch_6.pt
+2021-05-11 15:58:14,111 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 15:58:14,111 [INFO:__main__]: 	Max Decode Steps: 1
+2021-05-11 15:58:14,111 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 15:58:14,111 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 15:58:14,111 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 15:58:14,111 [INFO:__main__]: [0.02390438247011952, 0.0625, {'p': 0.075, 'r': 0.02390438247011952, 'f1': 0.036253776435045314}, {'corpus_bleu': 0.07701387112693124, 'avg_sent_bleu': 0.08544394728765693}]
+Testing future
+2021-05-11 15:58:15,805 [INFO:__main__]: My PID is 27642
+2021-05-11 15:58:15,805 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=4, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/future/test.txt.src', dev_input_src_section='../../data/test/future/test.txt.section', dev_ref='../../data/test/future/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=1, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_prob', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='none', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0001, train_oracle='../../data/train/future/train.txt.oracle', train_src='../../data/train/future/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/future/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:58:16,506 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:58:16,506 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:58:17,030 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:58:17,030 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:58:17,031 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:58:17.030963', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:58:17,291 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:58:17,292 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:58:17,292 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future/model_epoch_6.pt"
+2021-05-11 15:58:19,673 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 15:58:19,673 [INFO:__main__]:  * vocabulary size. source = 1000001
+2021-05-11 15:58:19,673 [INFO:__main__]:  * maximum batch size. 4
+2021-05-11 15:58:19,673 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 15:58:20,148 [INFO:__main__]: Loading trained model...
+2021-05-11 15:58:24,040 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future/model_epoch_6.pt
+2021-05-11 15:58:24,040 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 15:58:24,040 [INFO:__main__]: 	Max Decode Steps: 1
+2021-05-11 15:58:24,040 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 15:58:24,040 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 15:58:24,040 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 15:58:24,040 [INFO:__main__]: [0.35766423357664234, 0.6619718309859155, {'p': 0.6901408450704225, 'r': 0.35766423357664234, 'f1': 0.4711538461538462}, {'corpus_bleu': 0.6962783243478886, 'avg_sent_bleu': 0.6665797904000026}]
+================== Test all topics with test_decode_step_1_topk_3.sh ==================
+Testing contribution
+2021-05-11 15:58:25,677 [INFO:__main__]: My PID is 27668
+2021-05-11 15:58:25,677 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=4, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/contribution/test.txt.src', dev_input_src_section='../../data/test/contribution/test.txt.section', dev_ref='../../data/test/contribution/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=3, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_topk_3', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='normal', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0, train_oracle='../../data/train/contribution/train.txt.oracle', train_src='../../data/train/contribution/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/contribution/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:58:26,389 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:58:26,390 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:58:26,919 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:58:26,919 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:58:26,920 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:58:26.919929', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:58:27,180 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:58:27,180 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:58:27,180 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution/model_epoch_6.pt"
+2021-05-11 15:58:29,559 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 15:58:29,559 [INFO:__main__]:  * vocabulary size. source = 1000001
+2021-05-11 15:58:29,559 [INFO:__main__]:  * maximum batch size. 4
+2021-05-11 15:58:29,559 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 15:58:30,031 [INFO:__main__]: Loading trained model...
+2021-05-11 15:58:36,204 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution/model_epoch_6.pt
+2021-05-11 15:58:36,204 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 15:58:36,204 [INFO:__main__]: 	Max Decode Steps: 3
+2021-05-11 15:58:36,204 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 15:58:36,204 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 15:58:36,204 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 15:58:36,204 [INFO:__main__]: [0.3038277511961722, 0.8571428571428571, {'p': 0.43197278911564624, 'r': 0.3038277511961722, 'f1': 0.35674157303370785}, {'corpus_bleu': 0.4442086811465701, 'avg_sent_bleu': 0.43083444341288823}]
+Testing dataset
+2021-05-11 15:58:37,863 [INFO:__main__]: My PID is 27688
+2021-05-11 15:58:37,864 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=4, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/dataset/test.txt.src', dev_input_src_section='../../data/test/dataset/test.txt.section', dev_ref='../../data/test/dataset/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=3, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_topk_3', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='normal', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0, train_oracle='../../data/train/dataset/train.txt.oracle', train_src='../../data/train/dataset/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/dataset/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:58:38,577 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:58:38,577 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:58:39,104 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:58:39,104 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:58:39,105 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:58:39.104798', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:58:39,371 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:58:39,371 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:58:39,372 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset/model_epoch_6.pt"
+2021-05-11 15:58:41,807 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 15:58:41,808 [INFO:__main__]:  * vocabulary size. source = 1000000
+2021-05-11 15:58:41,808 [INFO:__main__]:  * maximum batch size. 4
+2021-05-11 15:58:41,808 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 15:58:42,284 [INFO:__main__]: Loading trained model...
+2021-05-11 15:58:47,910 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset/model_epoch_6.pt
+2021-05-11 15:58:47,910 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 15:58:47,910 [INFO:__main__]: 	Max Decode Steps: 3
+2021-05-11 15:58:47,910 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 15:58:47,910 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 15:58:47,910 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 15:58:47,911 [INFO:__main__]: [0.22330097087378642, 0.43956043956043955, {'p': 0.1684981684981685, 'r': 0.22330097087378642, 'f1': 0.19206680584551147}, {'corpus_bleu': 0.17741073322038506, 'avg_sent_bleu': 0.1743173867788827}]
+Testing baseline
+2021-05-11 15:58:49,583 [INFO:__main__]: My PID is 27707
+2021-05-11 15:58:49,583 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=4, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/baseline/test.txt.src', dev_input_src_section='../../data/test/baseline/test.txt.section', dev_ref='../../data/test/baseline/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=3, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_topk_3', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='normal', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0, train_oracle='../../data/train/baseline/train.txt.oracle', train_src='../../data/train/baseline/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/baseline/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:58:50,302 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:58:50,303 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:58:50,841 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:58:50,841 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:58:50,842 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:58:50.841516', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:58:51,106 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:58:51,107 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:58:51,107 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline/model_epoch_6.pt"
+2021-05-11 15:58:53,492 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 15:58:53,493 [INFO:__main__]:  * vocabulary size. source = 1000001
+2021-05-11 15:58:53,493 [INFO:__main__]:  * maximum batch size. 4
+2021-05-11 15:58:53,493 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 15:58:53,971 [INFO:__main__]: Loading trained model...
+2021-05-11 15:58:59,118 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline/model_epoch_6.pt
+2021-05-11 15:58:59,118 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 15:58:59,118 [INFO:__main__]: 	Max Decode Steps: 3
+2021-05-11 15:58:59,118 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 15:58:59,118 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 15:58:59,119 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 15:58:59,119 [INFO:__main__]: [0.055776892430278883, 0.15, {'p': 0.058333333333333334, 'r': 0.055776892430278883, 'f1': 0.05702647657841141}, {'corpus_bleu': 0.07025455978133949, 'avg_sent_bleu': 0.06641193158773309}]
+Testing future
+2021-05-11 15:59:00,789 [INFO:__main__]: My PID is 27727
+2021-05-11 15:59:00,790 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=4, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/future/test.txt.src', dev_input_src_section='../../data/test/future/test.txt.section', dev_ref='../../data/test/future/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=3, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_topk_3', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='normal', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0, train_oracle='../../data/train/future/train.txt.oracle', train_src='../../data/train/future/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/future/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:59:01,521 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:59:01,522 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:59:02,061 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:59:02,061 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:59:02,062 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:59:02.061423', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:59:02,327 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:59:02,327 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:59:02,328 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future/model_epoch_6.pt"
+2021-05-11 15:59:04,689 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 15:59:04,689 [INFO:__main__]:  * vocabulary size. source = 1000001
+2021-05-11 15:59:04,689 [INFO:__main__]:  * maximum batch size. 4
+2021-05-11 15:59:04,689 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 15:59:05,169 [INFO:__main__]: Loading trained model...
+2021-05-11 15:59:09,480 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future/model_epoch_6.pt
+2021-05-11 15:59:09,480 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 15:59:09,480 [INFO:__main__]: 	Max Decode Steps: 3
+2021-05-11 15:59:09,480 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 15:59:09,480 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 15:59:09,480 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 15:59:09,480 [INFO:__main__]: [0.6277372262773723, 0.8591549295774648, {'p': 0.40375586854460094, 'r': 0.6277372262773723, 'f1': 0.49142857142857144}, {'corpus_bleu': 0.4444797022903235, 'avg_sent_bleu': 0.44097462302514134}]
+================== Test all topics with test_decode_step_1_diff_3.sh ==================
+Testing contribution
+2021-05-11 15:59:11,142 [INFO:__main__]: My PID is 27797
+2021-05-11 15:59:11,142 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=1, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/contribution/test.txt.src', dev_input_src_section='../../data/test/contribution/test.txt.section', dev_ref='../../data/test/contribution/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=3, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_diff_3', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='diff', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0005, train_oracle='../../data/train/contribution/train.txt.oracle', train_src='../../data/train/contribution/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/contribution/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:59:11,872 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:59:11,872 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:59:12,388 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:59:12,389 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:59:12,389 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:59:12.389161', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:59:12,650 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:59:12,651 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:59:12,651 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution/model_epoch_6.pt"
+2021-05-11 15:59:15,024 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 15:59:15,024 [INFO:__main__]:  * vocabulary size. source = 1000001
+2021-05-11 15:59:15,024 [INFO:__main__]:  * maximum batch size. 1
+2021-05-11 15:59:15,024 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 15:59:15,495 [INFO:__main__]: Loading trained model...
+2021-05-11 15:59:25,316 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/contribution/model_epoch_6.pt
+2021-05-11 15:59:25,317 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 15:59:25,317 [INFO:__main__]: 	Max Decode Steps: 3
+2021-05-11 15:59:25,317 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 15:59:25,317 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 15:59:25,317 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 15:59:25,317 [INFO:__main__]: [0.18181818181818182, 0.6632653061224489, {'p': 0.5277777777777778, 'r': 0.18181818181818182, 'f1': 0.2704626334519573}, {'corpus_bleu': 0.563219378013943, 'avg_sent_bleu': 0.5803630435358265}]
+Testing dataset
+2021-05-11 15:59:26,991 [INFO:__main__]: My PID is 27823
+2021-05-11 15:59:26,993 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=1, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/dataset/test.txt.src', dev_input_src_section='../../data/test/dataset/test.txt.section', dev_ref='../../data/test/dataset/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=3, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_diff_3', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='diff', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0005, train_oracle='../../data/train/dataset/train.txt.oracle', train_src='../../data/train/dataset/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/dataset/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:59:27,730 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:59:27,731 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:59:28,269 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:59:28,269 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:59:28,270 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:59:28.269489', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:59:28,528 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:59:28,528 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:59:28,529 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset/model_epoch_6.pt"
+2021-05-11 15:59:30,926 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 15:59:30,926 [INFO:__main__]:  * vocabulary size. source = 1000000
+2021-05-11 15:59:30,926 [INFO:__main__]:  * maximum batch size. 1
+2021-05-11 15:59:30,926 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 15:59:31,405 [INFO:__main__]: Loading trained model...
+2021-05-11 15:59:40,459 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/dataset/model_epoch_6.pt
+2021-05-11 15:59:40,459 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 15:59:40,459 [INFO:__main__]: 	Max Decode Steps: 3
+2021-05-11 15:59:40,459 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 15:59:40,459 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 15:59:40,459 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 15:59:40,459 [INFO:__main__]: [0.2087378640776699, 0.43956043956043955, {'p': 0.16929133858267717, 'r': 0.2087378640776699, 'f1': 0.18695652173913044}, {'corpus_bleu': 0.1786801989877989, 'avg_sent_bleu': 0.2113982949578641}]
+Testing baseline
+2021-05-11 15:59:42,112 [INFO:__main__]: My PID is 27842
+2021-05-11 15:59:42,112 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=1, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/baseline/test.txt.src', dev_input_src_section='../../data/test/baseline/test.txt.section', dev_ref='../../data/test/baseline/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=3, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_diff_3', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='diff', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0005, train_oracle='../../data/train/baseline/train.txt.oracle', train_src='../../data/train/baseline/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/baseline/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:59:42,862 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:59:42,863 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:59:43,393 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:59:43,394 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:59:43,395 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:59:43.394390', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:59:43,661 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:59:43,661 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:59:43,662 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline/model_epoch_6.pt"
+2021-05-11 15:59:46,042 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 15:59:46,042 [INFO:__main__]:  * vocabulary size. source = 1000001
+2021-05-11 15:59:46,042 [INFO:__main__]:  * maximum batch size. 1
+2021-05-11 15:59:46,042 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 15:59:46,516 [INFO:__main__]: Loading trained model...
+2021-05-11 15:59:54,748 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/baseline/model_epoch_6.pt
+2021-05-11 15:59:54,748 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 15:59:54,749 [INFO:__main__]: 	Max Decode Steps: 3
+2021-05-11 15:59:54,749 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 15:59:54,749 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 15:59:54,749 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 15:59:54,749 [INFO:__main__]: [0.043824701195219126, 0.1125, {'p': 0.052132701421800945, 'r': 0.043824701195219126, 'f1': 0.047619047619047616}, {'corpus_bleu': 0.06192662860996682, 'avg_sent_bleu': 0.05117149011877723}]
+Testing future
+2021-05-11 15:59:56,433 [INFO:__main__]: My PID is 27861
+2021-05-11 15:59:56,433 [INFO:__main__]: Namespace(IL_with_KLDivLoss=False, add_all_bad_data_after=-1, att_vec_size=256, batch_size=1, beam_size=10, brnn_merge='concat', continue_training=False, cuda_seed=12345, curriculum=1, dec_dropout=0.0, dec_init='simple', dec_rnn_size=256, dev_input_src='../../data/test/future/test.txt.src', dev_input_src_section='../../data/test/future/test.txt.section', dev_ref='../../data/test/future/test.txt.oracle', disable_pretrained_emb=False, doc_brnn=True, doc_dropout=0.2, doc_enc_size=256, drop_too_long=500, drop_too_short=50, dump_epoch_checkpoint=False, early_stop_change_percent=0.01, enable_log_linear=False, epochs=15, eval_per_batch=1000, eval_test_during_train=False, extra_shuffle=False, force_max_len=True, freeze_word_vecs_enc=True, gpus=[], halve_lr_bad_count=100000, in_bert_weight=-1.0, in_section_weight=-1.0, input_feed=1, keep_initial_good_data_unchange=False, keyword_weight=-1.0, layers=1, learning_rate=0.001, learning_rate_decay=0.5, log_home='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future', log_interval=100, log_linear_save_path='', loglinear_learning_rate=0.01, max_decode_step=3, max_doc_len=500, max_generator_batches=32, max_grad_norm=5, max_sent_length=100, max_weight_value=15, maxout_pool_size=2, n_best_size=1, norm_lambda=20, online_process_data=False, optim='adam', output_len=5, param_init=0.1, position_weight=-1.0, pre_word_vecs_dec=None, pre_word_vecs_enc='../glove/glove.6B.50d.txt', process_shuffle=False, qtype='.', relabel_epoch=3, relabel_once=False, save_path='../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future', section_embedding=False, seed=12345, self_att_size=512, sent_brnn=True, sent_dropout=0.3, sent_enc_size=256, set_postfix='decode_step_1_diff_3', significant_criteria='random_ratio', significant_value=0.001, specific_epoch=-1, src_vocab=None, start_decay_at=8, start_epoch=1, start_eval_batch=15000, start_train_with_em=30, start_update_good_data_set=-1, stop_em_and_loglinear_after=9999, stripping_mode='diff', test_bert_annotation='', test_input_src=None, test_input_src_section=None, test_ref=None, tgt_vocab=None, threshold=0.0005, train_oracle='../../data/train/future/train.txt.oracle', train_src='../../data/train/future/train.txt.src', train_src_rouge=None, train_src_section='../../data/train/future/train.txt.section', train_tgt=None, use_good_data_only_before=-1, use_self_att=False, word_vec_size=50)
+2021-05-11 15:59:57,173 [INFO:__main__]: WARNING: You have a CUDA device, so you should probably run with -gpus 0
+2021-05-11 15:59:57,174 [INFO:__main__]: My seed is 12345
+/opt/conda/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+2021-05-11 15:59:57,717 [INFO:gensim.corpora.dictionary]: adding document #0 to Dictionary(0 unique tokens: [])
+2021-05-11 15:59:57,717 [INFO:gensim.corpora.dictionary]: built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+2021-05-11 15:59:57,718 [INFO:gensim.utils]: Dictionary lifecycle event {'msg': "built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)", 'datetime': '2021-05-11T15:59:57.718123', 'gensim': '4.0.1', 'python': '3.7.10 | packaged by conda-forge | (default, Feb 19 2021, 16:07:37) \n[GCC 9.3.0]', 'platform': 'Linux-4.19.0-16-cloud-amd64-x86_64-with-debian-10.9', 'event': 'created'}
+2021-05-11 15:59:57,986 [INFO:__main__]: Use preprocessed data stored in checkpoint.
+2021-05-11 15:59:57,986 [INFO:__main__]: Loading checkpoint...
+2021-05-11 15:59:57,986 [INFO:__main__]: Loading from the latest model "../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future/model_epoch_6.pt"
+2021-05-11 16:00:00,376 [INFO:__main__]: 	previous training epochs: 6
+2021-05-11 16:00:00,377 [INFO:__main__]:  * vocabulary size. source = 1000001
+2021-05-11 16:00:00,377 [INFO:__main__]:  * maximum batch size. 1
+2021-05-11 16:00:00,377 [INFO:__main__]: Building model...
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/opt/conda/lib/python3.7/site-packages/torch/nn/modules/rnn.py:63: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+2021-05-11 16:00:00,870 [INFO:__main__]: Loading trained model...
+2021-05-11 16:00:07,964 [INFO:__main__]: Using checkpoint: ../../data/models/WEM_Start5_End10_IR10_AddBad_10-15/future/model_epoch_6.pt
+2021-05-11 16:00:07,964 [INFO:__main__]: Key hyperparmeters:
+2021-05-11 16:00:07,964 [INFO:__main__]: 	Max Decode Steps: 3
+2021-05-11 16:00:07,964 [INFO:__main__]: 	Keep Data: [50, 500)
+2021-05-11 16:00:07,964 [INFO:__main__]: 	Trained epoch: 6
+2021-05-11 16:00:07,964 [INFO:__main__]: Evaluate score: (accuracy) total / hit@1, {precision, recall, f1 score} (sentence-level)
+2021-05-11 16:00:07,965 [INFO:__main__]: [0.43795620437956206, 0.7464788732394366, {'p': 0.5825242718446602, 'r': 0.43795620437956206, 'f1': 0.4999999999999999}, {'corpus_bleu': 0.6317943347983322, 'avg_sent_bleu': 0.6513137303452353}]

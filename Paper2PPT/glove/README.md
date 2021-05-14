@@ -1,0 +1,1 @@
+### Glove 6B word embedding globe.6B.50d.txt should be put here [Download link](http://nlp.stanford.edu/data/glove.6B.zip)

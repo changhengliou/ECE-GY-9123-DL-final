@@ -1,0 +1,4 @@
+.ipynb_checkpoints
+glove/glove.6B.50d.txt
+glove/__pycache__
+glove/ipynb_checkpoints

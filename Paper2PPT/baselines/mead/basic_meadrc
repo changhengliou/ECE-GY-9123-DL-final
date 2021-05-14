@@ -1,0 +1,28 @@
+# Currently unused
+compression_basis sentences
+compression_absolute 1
+output_mode summary
+
+# Notice the ’:’ separating two directories.
+# data_path mead/data/MEAD_TEST
+
+# This is a comment.
+# Note that the ’\’ on the next line indicates a continuation
+# of that line.
+# feature Position \
+#     mead/bin/feature-scripts/Position.pl \
+#         Centroid \
+#     mead/bin/feature-scripts/Centroid.pl \
+#         Length \
+#     mead/bin/feature-scripts/Length.pl
+    
+feature Position \
+    mead/bin/feature-scripts/Position.pl
+feature Centroid \
+    mead/bin/feature-scripts/Centroid.pl
+feature Length \
+    mead/bin/feature-scripts/Length.pl
+
+# Note that we don’t need quotes here...
+classifier mead/bin/default-classifier.pl \
+    Length 9 Centroid 1 Position 1

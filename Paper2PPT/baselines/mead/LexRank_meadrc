@@ -1,0 +1,24 @@
+# Currently unused
+# Haven't test yet
+# the setting is partially come from the original paper, page 470
+# https://www.aaai.org/Papers/JAIR/Vol22/JAIR-2214.pdf
+
+
+compression_basis words
+compression_absolute 200
+output_mode meadconfig
+
+# Notice the ’:’ separating two directories.
+data_path mead/data/MEAD_TEST
+
+# This is a comment.
+# Note that the ’\’ on the next line indicates a continuation
+# of that line.
+feature LexRank \
+    mead/bin/feature-scripts/lexrank/LexRank.pl 0.2
+
+# Note that we don’t need quotes here...
+classifier mead/bin/default-classifier.pl \
+    Centroid 1 Position 1 LengthCutoff 9 LexRank 1
+
+# mmr-reranker-word.pl 0.5 MEAD-cosine enidf
